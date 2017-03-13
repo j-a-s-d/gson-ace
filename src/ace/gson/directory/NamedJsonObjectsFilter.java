@@ -40,7 +40,7 @@ public class NamedJsonObjectsFilter extends Ace implements NamedJsonObjectCallba
 			if (unknownStart && unknownEnd) {
 				final String knownPart = Strings.dropBoth(filter, 1);
 				_innerCallback = new NamedJsonObjectCallback() {
-					@Override public void callback(final String name, final JsonObject object) {
+					/*@Override*/ public void callback(final String name, final JsonObject object) {
 						final JsonElement e = Json.getJsonObjectField(object, _field);
 						if (Json.isAssignedJsonPrimitiveString(e) && e.getAsString().contains(knownPart)) {
 							_items.put(name, object);
@@ -50,7 +50,7 @@ public class NamedJsonObjectsFilter extends Ace implements NamedJsonObjectCallba
 			} else if (unknownStart) {
 				final String knownPart = Strings.dropLeft(filter, 1);
 				_innerCallback = new NamedJsonObjectCallback() {
-					@Override public void callback(final String name, final JsonObject object) {
+					/*@Override*/ public void callback(final String name, final JsonObject object) {
 						final JsonElement e = Json.getJsonObjectField(object, _field);
 						if (Json.isAssignedJsonPrimitiveString(e) && e.getAsString().endsWith(knownPart)) {
 							_items.put(name, object);
@@ -60,7 +60,7 @@ public class NamedJsonObjectsFilter extends Ace implements NamedJsonObjectCallba
 			} else if (unknownEnd) {
 				final String knownPart = Strings.dropRight(filter, 1);
 				_innerCallback = new NamedJsonObjectCallback() {
-					@Override public void callback(final String name, final JsonObject object) {
+					/*@Override*/ public void callback(final String name, final JsonObject object) {
 						final JsonElement e = Json.getJsonObjectField(object, _field);
 						if (Json.isAssignedJsonPrimitiveString(e) && e.getAsString().startsWith(knownPart)) {
 							_items.put(name, object);
@@ -70,7 +70,7 @@ public class NamedJsonObjectsFilter extends Ace implements NamedJsonObjectCallba
 			} else {
 				final String knownPart = filter;
 				_innerCallback = new NamedJsonObjectCallback() {
-					@Override public void callback(final String name, final JsonObject object) {
+					/*@Override*/ public void callback(final String name, final JsonObject object) {
 						final JsonElement e = Json.getJsonObjectField(object, _field);
 						if (Json.isAssignedJsonPrimitiveString(e) && e.getAsString().equals(knownPart)) {
 							_items.put(name, object);
@@ -82,7 +82,7 @@ public class NamedJsonObjectsFilter extends Ace implements NamedJsonObjectCallba
 		return this;
 	}
 
-	@Override public void callback(final String n, final JsonObject o) {
+	/*@Override*/ public void callback(final String n, final JsonObject o) {
 		_innerCallback.callback(n, o);
 	}
 
