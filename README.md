@@ -1,5 +1,5 @@
 # Gson Ace
-A useful GSON extensions library for Ace (0.3.6 or superior).
+A useful GSON extensions library for Ace.
 
 ## Features
 - Json utility class with tons of shorthand static methods to easily create, persist, load, etc Json data
@@ -9,7 +9,11 @@ A useful GSON extensions library for Ace (0.3.6 or superior).
 
 ## History
 
+* 1.0.1 -- 14 Mar 2017
+    + released new binary
+    + configured to depend on Ace 0.3.7
 * 1.0.0 -- 13 Mar 2017
+    + released first public binary
     + added ace.gson.model.JsonModelReader class
     + added ace.gson.model.JsonModelFieldValueValidator class
     + added ace.gson.model.JsonModelField class
@@ -33,6 +37,8 @@ A useful GSON extensions library for Ace (0.3.6 or superior).
     + added ace.gson.builders package
     + added ace.gson.Json class
     + added ace.gson package
+    + configured to depend on GSON 2.3.1
+    + configured to depend on Ace 0.3.6
     + configured to build with the JDK 1.5 platform
     + created the project
 

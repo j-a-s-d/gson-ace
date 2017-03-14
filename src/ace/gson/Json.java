@@ -24,7 +24,7 @@ public class Json extends Ace {
 	/**
 	 * Gson Ace version.
 	 */
-	public static final SemanticVersion GSON_ACE_VERSION = SemanticVersion.fromString("1.0.0");
+	public static final SemanticVersion GSON_ACE_VERSION = SemanticVersion.fromString("1.0.1");
 
 	public static final String LEVEL_SEPARATOR = "/";
 
