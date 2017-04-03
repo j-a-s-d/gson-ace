@@ -3,7 +3,7 @@
 package ace.gson;
 
 import ace.Ace;
-import ace.app.SemanticVersion;
+import ace.SemanticVersion;
 import ace.constants.STRINGS;
 import ace.files.TextFiles;
 import ace.gson.builders.JsonArrayBuilder;
@@ -24,7 +24,7 @@ public class Json extends Ace {
 	/**
 	 * Gson Ace version.
 	 */
-	public static final SemanticVersion GSON_ACE_VERSION = SemanticVersion.fromString("1.0.1");
+	public static final SemanticVersion GSON_ACE_VERSION = SemanticVersion.fromString("1.0.2");
 
 	public static final String LEVEL_SEPARATOR = "/";
 

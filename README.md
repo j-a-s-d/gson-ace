@@ -9,6 +9,9 @@ A useful GSON extensions library for Ace.
 
 ## History
 
+* 1.0.2 -- 03 Apr 2017
+    + released new binary
+    + configured to depend on Ace 0.5.0
 * 1.0.1 -- 14 Mar 2017
     + released new binary
     + configured to depend on Ace 0.3.7
