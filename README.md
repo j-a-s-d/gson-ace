@@ -9,6 +9,10 @@ A useful GSON extensions library for Ace.
 
 ## History
 
+* 1.0.3 -- 30 Oct 2019
+    + released new binary
+    + configured to depend on Ace 0.5.6
+    + improved ace.gson.Json class
 * 1.0.2 -- 03 Apr 2017
     + released new binary
     + configured to depend on Ace 0.5.0
@@ -48,7 +52,7 @@ A useful GSON extensions library for Ace.
 ## License
 
 Gson Ace
-Copyright (c) 2017 Javier Santo Domingo (j-a-s-d@coderesearchlabs.com).
+Copyright (c) 2017-2019 Javier Santo Domingo (j-a-s-d@coderesearchlabs.com).
 
 Permission is hereby granted, free of charge, to any
 person obtaining a copy of this software and associated

@@ -10,8 +10,9 @@ import ace.gson.builders.JsonArrayBuilder;
 import ace.text.Strings;
 import com.google.gson.*;
 import java.io.File;
-import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -24,7 +25,7 @@ public class Json extends Ace {
 	/**
 	 * Gson Ace version.
 	 */
-	public static final SemanticVersion GSON_ACE_VERSION = SemanticVersion.fromString("1.0.2");
+	public static final SemanticVersion GSON_ACE_VERSION = SemanticVersion.fromString("1.0.3");
 
 	public static final String LEVEL_SEPARATOR = "/";
 
@@ -461,7 +462,7 @@ public class Json extends Ace {
 	}
 
 	public static List<JsonObject> convertJsonArraytoJsonObjectList(final JsonArray array) {
-		return new ArrayList<JsonObject>() {
+		return new LinkedList<JsonObject>() {
 			{
 				for (final JsonElement item : array) {
 					add(ensureJsonObject(item));
@@ -527,7 +528,7 @@ public class Json extends Ace {
 
 	// object
 	public static boolean hasFields(final JsonObject o) {
-		return !o.entrySet().isEmpty();
+		return o != null && !o.entrySet().isEmpty();
 	}
 
 	public static boolean hasFields(final JsonObject o, final String... fields) {
@@ -574,11 +575,35 @@ public class Json extends Ace {
 		return readStringAsJsonObject(JsonElementToString(o));
 	}
 
-	public static List<String> getKeysFromJsonObject(final JsonObject o) {
-		return new ArrayList() {
+	public static Map<String, String> convertJsonObjectToStringHashMap(final JsonObject o) {
+		final Map<String, String> map = new LinkedHashMap();
+		if (assigned(o)) {
+			for (final String key : Json.getKeysFromJsonObject(o)) {
+				map.put(key, o.get(key).getAsString());
+			}
+		}
+		return map;
+	}
+
+	public static List<String> getValuesFromJsonObject(final JsonObject o) {
+		return new LinkedList() {
 			{
-				for (final Map.Entry<String, JsonElement> e : o.entrySet()) {
-					add(e.getKey());
+				if (assigned(o)) {
+					for (final Map.Entry<String, JsonElement> e : o.entrySet()) {
+						add(e.getValue());
+					}
+				}
+			}
+		};
+	}
+
+	public static List<String> getKeysFromJsonObject(final JsonObject o) {
+		return new LinkedList() {
+			{
+				if (assigned(o)) {
+					for (final Map.Entry<String, JsonElement> e : o.entrySet()) {
+						add(e.getKey());
+					}
 				}
 			}
 		};
