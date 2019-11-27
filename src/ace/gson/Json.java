@@ -25,11 +25,14 @@ public class Json extends Ace {
 	/**
 	 * Gson Ace version.
 	 */
-	public static final SemanticVersion GSON_ACE_VERSION = SemanticVersion.fromString("1.1.0");
+	public static final SemanticVersion GSON_ACE_VERSION = SemanticVersion.fromString("1.1.1");
 
 	public static final String LEVEL_SEPARATOR = "/";
 
 	public static final String FILE_EXTENSION = ".json";
+
+	public static final JsonObject EMPTY_JSON_OBJECT = new JsonObject();
+	public static final JsonArray EMPTY_JSON_ARRAY = new JsonArray();
 
 	public static final JsonNull NULL = JsonNull.INSTANCE;
 	public static final JsonPrimitive TRUE = bool(true);
@@ -653,6 +656,14 @@ public class Json extends Ace {
 	public static JsonObject wrapInJsonObject(final String name, final JsonElement e) {
 		final JsonObject result = new JsonObject();
 		result.add(name, e);
+		return result;
+	}
+
+	public static JsonObject convertStringsMapToJsonObject(final Map<String, String> map) {
+		final JsonObject result = new JsonObject();
+		for (final Map.Entry<String, String> e : map.entrySet()) {
+			result.addProperty(e.getKey(), e.getValue());
+		}
 		return result;
 	}
 
