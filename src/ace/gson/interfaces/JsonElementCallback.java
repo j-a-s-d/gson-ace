@@ -4,6 +4,9 @@ package ace.gson.interfaces;
 
 import com.google.gson.JsonElement;
 
+/**
+ * Json element callback interface.
+ */
 public interface JsonElementCallback {
 
 	void callback(final JsonElement element);

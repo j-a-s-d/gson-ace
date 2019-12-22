@@ -9,6 +9,9 @@ A useful GSON extensions library for Ace.
 
 ## History
 
+* 1.2.0 -- 22 Dec 2019
+    + released first public binary
+    + added methods documentation comments
 * 1.1.1 -- 27 Nov 2019
     + released new binary
     + improved ace.gson.Json class

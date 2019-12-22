@@ -4,6 +4,9 @@ package ace.gson.interfaces;
 
 import com.google.gson.JsonArray;
 
+/**
+ * Json array callback interface.
+ */
 public interface JsonArrayCallback {
 
 	void callback(final JsonArray array);

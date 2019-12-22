@@ -4,6 +4,9 @@ package ace.gson.interfaces;
 
 import com.google.gson.JsonElement;
 
+/**
+ * Json persistable interface.
+ */
 public interface JsonPersistable {
 	
 	boolean loadFromJson(final JsonElement element);
