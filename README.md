@@ -9,8 +9,12 @@ A useful GSON extensions library for Ace.
 
 ## History
 
+* 1.3.0 -- 24 Dec 2019
+    + released new binaries
+    + added sources and javadoc packages generation
+    + configured to depend on Ace 0.7.0
 * 1.2.0 -- 22 Dec 2019
-    + released first public binary
+    + released new binary
     + added methods documentation comments
 * 1.1.1 -- 27 Nov 2019
     + released new binary
