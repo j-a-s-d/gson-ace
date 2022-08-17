@@ -25,7 +25,7 @@ public class Json extends Ace {
 	/**
 	 * Gson Ace version.
 	 */
-	public static final SemanticVersion GSON_ACE_VERSION = SemanticVersion.fromString("1.3.0");
+	public static final SemanticVersion GSON_ACE_VERSION = SemanticVersion.fromString("1.3.1");
 
 	/**
 	 * The level separator used for the xpath like paths.
